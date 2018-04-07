@@ -23,8 +23,7 @@ INSTALLED_APPS = [
     'rest_auth.registration',
 
     # Project
-    'users',
-    'colors',
+    'workspace',
 ]
 MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware',  # This is for CORS
@@ -91,9 +90,6 @@ CHANNELS_LAYER = {
         }
     }
 }
-
-# Overriding Django User models
-AUTH_USER_MODEL = "users.User"
 
 # CORS Headers settings
 CORS_ORIGIN_ALLOW_ALL = True
