@@ -31,3 +31,5 @@ Twisted==17.9.0
 txaio==2.9.0
 urllib3==1.22
 zope.interface==4.4.3
+pytest-django==3.1.2
+pytest-asyncio==0.8.0
