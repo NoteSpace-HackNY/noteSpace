@@ -11,7 +11,7 @@ class WorkspaceViewset(viewsets.ModelViewSet):
     '''
         API Viewset to retrieve, update, create, and delete Workspace information
     '''
-    def get_queryset(self)
+    def get_queryset(self):
       return Workspace.objects.filter(members__in=self.request.user)
 
     serializer_class = WorkspaceSerializer
