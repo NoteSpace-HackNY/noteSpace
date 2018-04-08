@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from Workspace.models import Snippet, LANGUAGE_CHOICES, STYLE_CHOICES
+from .models import Workspace, Card
 
 #Workspace Serializer
 class WorkspaceSerializer(serializers.ModelSerializer):
@@ -10,4 +10,4 @@ class WorkspaceSerializer(serializers.ModelSerializer):
 class CardSerializer(serializers.ModelSerializer):
     class Meta:
         model = Card
-        fields = ('Workspace', 'front', 'back', 'last_edit', 'locked')
+        fields = ('workspace', 'front', 'back', 'last_edit', 'locked')
