@@ -35,7 +35,7 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
-ROOT_URLCONF = 'example_base.urls'
+ROOT_URLCONF = 'noteSpace.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
@@ -51,7 +51,7 @@ TEMPLATES = [
         },
     },
 ]
-WSGI_APPLICATION = 'example_base.wsgi.application'
+WSGI_APPLICATION = 'noteSpace.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
@@ -81,7 +81,7 @@ STATIC_URL = '/static/'
 SITE_ID = 1
 
 # Channels Configuration
-ASGI_APPLICATION = 'example_base.routing.application'  # Not sure why this points to routing.py instead of asgi.py
+ASGI_APPLICATION = 'noteSpace.routing.application'  # Not sure why this points to routing.py instead of asgi.py
 CHANNELS_LAYER = {
     'default': {
         'BACKEND': 'channels_redis.core.RedisChannelLayer',
@@ -101,3 +101,5 @@ REST_FRAMEWORK = {
         'rest_framework.authentication.SessionAuthentication',
     ],
 }
+
+EMAIL_BACKEND = os.getenv('DJANGO_EMAIL_BACKEND', default='django.core.mail.backends.console.EmailBackend')
